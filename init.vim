@@ -27,6 +27,7 @@ Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'abra/vim-obsidian'
+Plug 'alessandroyorba/despacio'
 
 "visual
 Plug 'yggdroot/indentline'
@@ -35,6 +36,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'lilydjwg/colorizer'
 Plug 'leafgarland/typescript-vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 "Git integration
 Plug 'mhinz/vim-signify'
@@ -53,13 +55,14 @@ Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 Plug 'vim-python/python-syntax'
 
-"code completion
+"code modification
 Plug 'ddollar/nerdcommenter'
 Plug 'honza/vim-snippets'
 Plug 'sirver/ultisnips'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 let mapleader = " "
@@ -68,12 +71,16 @@ let mapleader = " "
 let g:python_highlight_all = 1
 set termguicolors
 set background=dark
-let ayucolor="dark"
+" let ayucolor="dark"
 let g:gruvbox_contrast_dark="hard"
+" let g:despacio_Sunset = 1
+" let g:despacio_Twilight = 1
+" let g:despacio_Midnight = 1
+" let g:despacio_Pitch = 1
 colorscheme gruvbox
 
-nmap <F5> :source %<CR>
-vmap <F5> :source %<CR>
+nmap <F5> :source ~/.config/nvim/init.vim<CR>
+vmap <F5> :source ~/.config/nvim/init.vim<CR>
 
 noremap <up> <nop>
 noremap <down> <nop>
@@ -121,7 +128,7 @@ let g:ctrlp_use_caching = 0
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "Mapeo del explorador de archivos
 let g:NERDTreeChDirMode = 2 "Cambia el directorio actual al nodo padre actual
-map <F2> :NERDTreeToggle<CR>
+map <leader><tab> :NERDTreeToggle<CR>
 
 let g:NERDTreeDirArrowExpandable = ''
 let g:NERDTreeDirArrowCollapsible = ''
@@ -139,7 +146,7 @@ endif
 "Mapeo de la barra de estado airline
 let g:airline#extensions#tabline#enabled = 1  " Mostrar buffers abiertos (como pestañas)
 let g:airline#extensions#tabline#fnamemod = ':t'  " Mostrar sólo el nombre del archivo
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1 " Modifica los separadores para que tengan forma de triangulos
 let g:airline_theme='tomorrow'
 
 "signify
@@ -187,3 +194,8 @@ let g:rustfmt_autosave = 1
 
 "prettier configuration for vim
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+
+"configuring the highlight devicons
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
