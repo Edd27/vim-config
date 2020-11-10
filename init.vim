@@ -1,6 +1,6 @@
 syntax on
 
-set mouse=a
+se mouse=a
 set noerrorbells
 set sw=2
 set expandtab
@@ -16,6 +16,8 @@ set clipboard=unnamedplus
 set encoding=utf-8
 set ignorecase
 set cursorline
+set splitbelow
+set splitright
 
 set colorcolumn=120
 highlight ColoColumn ctermbg=0 guibg=lightgrey
@@ -62,6 +64,7 @@ Plug 'sirver/ultisnips'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rhysd/vim-clang-format'
 
 call plug#end()
 
@@ -71,13 +74,13 @@ let mapleader = " "
 let g:python_highlight_all = 1
 set termguicolors
 set background=dark
-" let ayucolor="dark"
-let g:gruvbox_contrast_dark="hard"
+let ayucolor="dark"
+" let g:gruvbox_contrast_dark="hard"
 " let g:despacio_Sunset = 1
 " let g:despacio_Twilight = 1
 " let g:despacio_Midnight = 1
 " let g:despacio_Pitch = 1
-colorscheme gruvbox
+colorscheme ayu
 
 nmap <F5> :source ~/.config/nvim/init.vim<CR>
 vmap <F5> :source ~/.config/nvim/init.vim<CR>
@@ -94,8 +97,8 @@ nnoremap <silent> <up> :resize +5<CR>
 nnoremap <silent> <down> :resize -5<CR>
 nnoremap <leader>e :e $MYVIMRC<CR>
 
-vnoremap <c-t> :split<CR>:ter<CR>
-nnoremap <c-t> :split<CR>:ter<CR>
+vnoremap <c-t> :split<CR>:ter<CR>:resize 15<CR>
+nnoremap <c-t> :split<CR>:ter<CR>:resize 15<CR>
 
 " Moverse al buffer siguiente con <líder> + k
 nnoremap <leader>k :bnext<CR>
@@ -138,7 +141,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1] =~# '\s'
 endfunction
 
-"Vim devicons
+" Vim devicons
 if exists("g:loaded_webdevicons")
   call webdevicons#refresh()
 endif
@@ -199,3 +202,9 @@ command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
+
+"configuring clang
+let g:clang_format#auto_format = 1
+
+"indentline
+let g:indentLine_char_list = ['│', '┊']
