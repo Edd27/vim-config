@@ -1,6 +1,6 @@
 syntax on
 
-se mouse=a
+set mouse=a
 set noerrorbells
 set sw=2
 set expandtab
@@ -38,7 +38,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'lilydjwg/colorizer'
 Plug 'leafgarland/typescript-vim'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 "Git integration
 Plug 'mhinz/vim-signify'
@@ -76,11 +75,11 @@ set termguicolors
 set background=dark
 let ayucolor="dark"
 " let g:gruvbox_contrast_dark="hard"
-" let g:despacio_Sunset = 1
+let g:despacio_Sunset = 1
 " let g:despacio_Twilight = 1
 " let g:despacio_Midnight = 1
 " let g:despacio_Pitch = 1
-colorscheme ayu
+colorscheme despacio
 
 nmap <F5> :source ~/.config/nvim/init.vim<CR>
 vmap <F5> :source ~/.config/nvim/init.vim<CR>
