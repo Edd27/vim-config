@@ -28,7 +28,6 @@ call plug#begin('~/.local/shar/nvim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 Plug 'joshdick/onedark.vim'
-Plug 'abra/vim-obsidian'
 Plug 'alessandroyorba/despacio'
 
 "visual
@@ -75,8 +74,8 @@ set termguicolors
 set background=dark
 let ayucolor="dark"
 " let g:gruvbox_contrast_dark="hard"
-let g:despacio_Sunset = 1
-" let g:despacio_Twilight = 1
+" let g:despacio_Sunset = 1
+let g:despacio_Twilight = 1
 " let g:despacio_Midnight = 1
 " let g:despacio_Pitch = 1
 colorscheme despacio
