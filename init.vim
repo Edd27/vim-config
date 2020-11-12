@@ -72,7 +72,7 @@ let mapleader = " "
 let g:python_highlight_all = 1
 set termguicolors
 set background=dark
-let ayucolor="dark"
+" let ayucolor="dark"
 " let g:gruvbox_contrast_dark="hard"
 " let g:despacio_Sunset = 1
 let g:despacio_Twilight = 1
