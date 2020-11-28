@@ -1,5 +1,49 @@
-syntax on
+call plug#begin('~/.local/shar/nvim/plugged')
 
+"themes
+" Plug 'morhetz/gruvbox'
+" Plug 'ayu-theme/ayu-vim'
+" Plug 'joshdick/onedark.vim'
+Plug 'crusoexia/vim-monokai'
+
+"visual
+Plug 'yggdroot/indentline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+Plug 'lilydjwg/colorizer'
+Plug 'leafgarland/typescript-vim'
+Plug 'uiiaoo/java-syntax.vim'
+
+"Git integration
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/gv.vim'
+
+"Functionality
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'KabbAmine/vCoolor.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
+Plug 'vim-python/python-syntax'
+
+"code modification
+Plug 'scrooloose/nerdcommenter'
+Plug 'honza/vim-snippets'
+Plug 'sirver/ultisnips'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mattn/emmet-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rhysd/vim-clang-format'
+
+call plug#end()
+
+syntax on
 set mouse=a
 set noerrorbells
 set sw=2
@@ -20,51 +64,10 @@ set splitbelow
 set splitright
 
 set colorcolumn=120
+
 highlight ColoColumn ctermbg=0 guibg=lightgrey
 
-call plug#begin('~/.local/shar/nvim/plugged')
-
-"themes
-Plug 'morhetz/gruvbox'
-Plug 'ayu-theme/ayu-vim'
-Plug 'joshdick/onedark.vim'
-Plug 'alessandroyorba/despacio'
-
-"visual
-Plug 'yggdroot/indentline'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
-Plug 'lilydjwg/colorizer'
-Plug 'leafgarland/typescript-vim'
-
-"Git integration
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'junegunn/gv.vim'
-
-"Functionality
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'KabbAmine/vCoolor.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'rust-lang/rust.vim'
-Plug 'cespare/vim-toml'
-Plug 'vim-python/python-syntax'
-
-"code modification
-Plug 'ddollar/nerdcommenter'
-Plug 'honza/vim-snippets'
-Plug 'sirver/ultisnips'
-Plug 'jiangmiao/auto-pairs'
-Plug 'mattn/emmet-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rhysd/vim-clang-format'
-
-call plug#end()
+let g:python3_host_prog = '/usr/bin/python3'
 
 let mapleader = " "
 
@@ -78,7 +81,7 @@ set background=dark
 let g:despacio_Twilight = 1
 " let g:despacio_Midnight = 1
 " let g:despacio_Pitch = 1
-colorscheme despacio
+colorscheme monokai
 
 nmap <F5> :source ~/.config/nvim/init.vim<CR>
 vmap <F5> :source ~/.config/nvim/init.vim<CR>
@@ -206,3 +209,6 @@ let g:clang_format#auto_format = 1
 
 "indentline
 let g:indentLine_char_list = ['│', '┊']
+
+"Modificacion de los ajustes de resaltado de sintaxis de java
+highlight link JavaIdentifier NONE
